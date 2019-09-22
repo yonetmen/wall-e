@@ -48,5 +48,13 @@ public class RoomTest {
         Point invalidX = new Point(11, 5);
         contains = room.contains(invalidX);
         Assert.assertFalse(contains);
+
+        invalidY = new Point(5, -11);
+        contains = room.contains(invalidY);
+        Assert.assertFalse(contains);
+
+        invalidX = new Point(-11, 5);
+        contains = room.contains(invalidX);
+        Assert.assertFalse(contains);
     }
 }

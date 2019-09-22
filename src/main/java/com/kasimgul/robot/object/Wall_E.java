@@ -28,8 +28,8 @@ public class Wall_E {
         if (!isValid) return null;
 
         List<String> pathAsList = Arrays.asList(path.split(""));
-        pathAsList.forEach(initial -> {
-            switch (initial.toUpperCase()) {
+        pathAsList.forEach(letter -> {
+            switch (letter.toUpperCase()) {
                 case "V":
                 case "L":
                     turnLeft();

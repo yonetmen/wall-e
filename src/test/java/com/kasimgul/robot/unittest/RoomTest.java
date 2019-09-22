@@ -1,8 +1,8 @@
 package com.kasimgul.robot.unittest;
 
 import com.kasimgul.robot.object.Room;
-import com.kasimgul.robot.object.RoomCircle;
-import com.kasimgul.robot.object.RoomSquare;
+import com.kasimgul.robot.object.CircularRoom;
+import com.kasimgul.robot.object.SquareRoom;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class RoomTest {
 
     @Test
     public void squareRoomValidPath_ShouldReturnTrue() {
-        Room room = new RoomSquare();
+        Room room = new SquareRoom();
         Point point = new Point(1, 2);
         boolean contains = room.contains(point);
         Assert.assertTrue(contains);
@@ -20,7 +20,7 @@ public class RoomTest {
 
     @Test
     public void squareRoomInvalidPath_ShouldReturnFalse() {
-        Room room = new RoomSquare();
+        Room room = new SquareRoom();
         Point invalidY = new Point(1, 6);
         boolean contains = room.contains(invalidY);
         Assert.assertFalse(contains);
@@ -31,16 +31,16 @@ public class RoomTest {
     }
 
     @Test
-    public void circleRoomValidPath_ShouldReturnTrue() {
-        Room room = new RoomCircle();
+    public void circularRoomValidPath_ShouldReturnTrue() {
+        Room room = new CircularRoom();
         Point point = new Point(5, 5);
         boolean contains = room.contains(point);
         Assert.assertTrue(contains);
     }
 
     @Test
-    public void circleRoomInvalidPath_ShouldReturnFalse() {
-        Room room = new RoomCircle();
+    public void circularRoomInvalidPath_ShouldReturnFalse() {
+        Room room = new CircularRoom();
         Point invalidY = new Point(5, 11);
         boolean contains = room.contains(invalidY);
         Assert.assertFalse(contains);

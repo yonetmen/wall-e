@@ -2,13 +2,13 @@ package com.kasimgul.robot.object;
 
 import java.awt.*;
 
-public class RoomSquare implements Room {
+public class SquareRoom implements Room {
 
     private Point startPosition;
     private static final int X = 5;
     private static final int Y = 5;
 
-    public RoomSquare() {
+    public SquareRoom() {
         startPosition = new Point(1, 2);
     }
 

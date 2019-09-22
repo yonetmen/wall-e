@@ -2,7 +2,7 @@ package com.kasimgul.robot.unittest;
 
 import com.kasimgul.robot.geo.Destination;
 import com.kasimgul.robot.object.Room;
-import com.kasimgul.robot.object.RoomSquare;
+import com.kasimgul.robot.object.SquareRoom;
 import com.kasimgul.robot.object.Wall_E;
 import com.kasimgul.robot.ui.UserInterface;
 import org.junit.Assert;
@@ -30,7 +30,7 @@ public class RobotTest {
 
     @Test
     public void goToDestinationGivenValidPath_ShouldOutputResult() {
-        Room room = Mockito.mock(RoomSquare.class);
+        Room room = Mockito.mock(SquareRoom.class);
         UserInterface userInterface = new UserInterface();
         Point currentLocation = new Point(1, 2);
         Mockito.when(room.getStartPosition()).thenReturn(currentLocation);
@@ -42,7 +42,7 @@ public class RobotTest {
 
     @Test
     public void goToDestinationGivenInvalidPath_ShouldReturnErrorMsg() {
-        Room room = Mockito.mock(RoomSquare.class);
+        Room room = Mockito.mock(SquareRoom.class);
         UserInterface userInterface = new UserInterface();
         Point currentLocation = new Point(1, 2);
         Mockito.when(room.getStartPosition()).thenReturn(currentLocation);

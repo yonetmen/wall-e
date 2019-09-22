@@ -2,8 +2,8 @@ package com.kasimgul.robot.ui;
 
 import com.kasimgul.robot.geo.Destination;
 import com.kasimgul.robot.object.Room;
-import com.kasimgul.robot.object.RoomCircle;
-import com.kasimgul.robot.object.RoomSquare;
+import com.kasimgul.robot.object.CircularRoom;
+import com.kasimgul.robot.object.SquareRoom;
 
 import java.awt.*;
 import java.util.Scanner;
@@ -20,15 +20,15 @@ public class UserInterface {
         Room room = null;
         System.out.println("Please choose a Room to operate your Wall_E: ");
         System.out.println("1 - Square Room");
-        System.out.println("2 - Circle Room");
+        System.out.println("2 - Circular Room");
         String roomType = scanner.nextLine();
 
         switch (roomType) {
             case "1":
-                room = new RoomSquare();
+                room = new SquareRoom();
                 break;
             case "2":
-                room = new RoomCircle();
+                room = new CircularRoom();
                 break;
             default:
                 System.err.println("Your input is not valid. Please try again!");
@@ -63,7 +63,7 @@ public class UserInterface {
         int currentY = (int) location.getY();
 
         String roomTypeName = room.getClass().getSimpleName();
-        if (roomTypeName.equals(RoomSquare.class.getSimpleName())) {
+        if (roomTypeName.equals(SquareRoom.class.getSimpleName())) {
             if (currentX < 1) currentX -= 1;
             if (currentY < 1) currentY -= 1;
         }

@@ -1,8 +1,8 @@
 package com.kasimgul.robot.unittest;
 
 import com.kasimgul.robot.object.Room;
-import com.kasimgul.robot.object.RoomCircle;
-import com.kasimgul.robot.object.RoomSquare;
+import com.kasimgul.robot.object.CircularRoom;
+import com.kasimgul.robot.object.SquareRoom;
 import com.kasimgul.robot.ui.UserInterface;
 import org.junit.After;
 import org.junit.Before;
@@ -27,17 +27,17 @@ public class UserInterfaceTest extends AbstractTest {
     }
 
     @Test
-    public void roomSelection_ShouldReturnRoomSquare() {
+    public void roomSelection_ShouldReturnSquareRoom() {
         systemInMock.provideLines("1");
         Room room = ui.roomSelection();
-        assertEquals(RoomSquare.class.getSimpleName(), room.getClass().getSimpleName());
+        assertEquals(SquareRoom.class.getSimpleName(), room.getClass().getSimpleName());
     }
 
     @Test
-    public void roomSelection_ShouldReturnRoomCircle() {
+    public void roomSelection_ShouldReturnCircularRoom() {
         systemInMock.provideLines("2");
         Room room = ui.roomSelection();
-        assertEquals(RoomCircle.class.getSimpleName(), room.getClass().getSimpleName());
+        assertEquals(CircularRoom.class.getSimpleName(), room.getClass().getSimpleName());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class UserInterfaceTest extends AbstractTest {
     @Test
     public void handleInvalidDestinationTest() {
         Point point = new Point(0, -1);
-        Room room = new RoomSquare();
+        Room room = new SquareRoom();
         ui.handleInvalidDestination(point, room);
         String log = errRule.getLog();
         boolean contains = log.contains("Invalid destination. X=-1, Y=-2");

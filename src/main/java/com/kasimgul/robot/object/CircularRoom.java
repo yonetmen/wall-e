@@ -2,12 +2,12 @@ package com.kasimgul.robot.object;
 
 import java.awt.*;
 
-public class RoomCircle implements Room {
+public class CircularRoom implements Room {
 
     private Point startPosition;
     private static final int RADIUS = 10;
 
-    public RoomCircle() {
+    public CircularRoom() {
         startPosition = new Point(0, 0);
     }
 

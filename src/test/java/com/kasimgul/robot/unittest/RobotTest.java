@@ -7,9 +7,7 @@ import com.kasimgul.robot.object.Wall_E;
 import com.kasimgul.robot.ui.UserInterface;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.SystemErrRule;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -18,10 +16,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.awt.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RobotTest {
-
-    @Rule
-    public final SystemErrRule errRule = new SystemErrRule().enableLog();
+public class RobotTest extends AbstractTest {
 
     @Before
     public void init() {

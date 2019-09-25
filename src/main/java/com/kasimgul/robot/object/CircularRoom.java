@@ -5,7 +5,7 @@ import java.awt.*;
 public class CircularRoom implements Room {
 
     private Point startPosition;
-    private static final int RADIUS = 10;
+    private static final int RADIUS = 9; // (zero-based index)
 
     public CircularRoom() {
         startPosition = new Point(0, 0);

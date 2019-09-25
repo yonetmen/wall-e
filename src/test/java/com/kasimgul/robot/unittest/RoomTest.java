@@ -41,19 +41,19 @@ public class RoomTest {
     @Test
     public void circularRoomInvalidPath_ShouldReturnFalse() {
         Room room = new CircularRoom();
-        Point invalidY = new Point(5, 11);
+        Point invalidY = new Point(5, 10);
         boolean contains = room.contains(invalidY);
         Assert.assertFalse(contains);
 
-        Point invalidX = new Point(11, 5);
+        Point invalidX = new Point(10, 5);
         contains = room.contains(invalidX);
         Assert.assertFalse(contains);
 
-        invalidY = new Point(5, -11);
+        invalidY = new Point(5, -10);
         contains = room.contains(invalidY);
         Assert.assertFalse(contains);
 
-        invalidX = new Point(-11, 5);
+        invalidX = new Point(-10, 5);
         contains = room.contains(invalidX);
         Assert.assertFalse(contains);
     }
